@@ -39,6 +39,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbKosnicka = new System.Windows.Forms.ListBox();
             this.btnNaracaj = new System.Windows.Forms.Button();
             this.btnDetali = new System.Windows.Forms.Button();
             this.btnOtstraniKosnicka = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.rbPrebaruvanje = new System.Windows.Forms.RadioButton();
             this.rbCelosna = new System.Windows.Forms.RadioButton();
-            this.lbKosnicka = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -58,8 +58,6 @@
             // 
             // lbKnigi
             // 
-            this.lbKnigi.DataSource = this.booksBindingSource;
-            this.lbKnigi.DisplayMember = "Title";
             this.lbKnigi.FormattingEnabled = true;
             this.lbKnigi.Location = new System.Drawing.Point(6, 19);
             this.lbKnigi.Name = "lbKnigi";
@@ -101,6 +99,7 @@
             this.btnPrebaraj.TabIndex = 2;
             this.btnPrebaraj.Text = "Пребарај";
             this.btnPrebaraj.UseVisualStyleBackColor = true;
+            this.btnPrebaraj.Click += new System.EventHandler(this.btnPrebaraj_Click);
             // 
             // groupBox1
             // 
@@ -132,6 +131,14 @@
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Кошничка";
+            // 
+            // lbKosnicka
+            // 
+            this.lbKosnicka.FormattingEnabled = true;
+            this.lbKosnicka.Location = new System.Drawing.Point(3, 16);
+            this.lbKosnicka.Name = "lbKosnicka";
+            this.lbKosnicka.Size = new System.Drawing.Size(120, 95);
+            this.lbKosnicka.TabIndex = 0;
             // 
             // btnNaracaj
             // 
@@ -168,6 +175,7 @@
             this.btnDodadiKniga.TabIndex = 6;
             this.btnDodadiKniga.Text = "Додади книга";
             this.btnDodadiKniga.UseVisualStyleBackColor = true;
+            this.btnDodadiKniga.Click += new System.EventHandler(this.btnDodadiKniga_Click);
             // 
             // btnDodadiKosnicka
             // 
@@ -210,14 +218,6 @@
             this.rbCelosna.TabStop = true;
             this.rbCelosna.Text = "Целосна листа";
             this.rbCelosna.UseVisualStyleBackColor = true;
-            // 
-            // lbKosnicka
-            // 
-            this.lbKosnicka.FormattingEnabled = true;
-            this.lbKosnicka.Location = new System.Drawing.Point(3, 16);
-            this.lbKosnicka.Name = "lbKosnicka";
-            this.lbKosnicka.Size = new System.Drawing.Size(120, 95);
-            this.lbKosnicka.TabIndex = 0;
             // 
             // Form1
             // 

@@ -41,6 +41,8 @@
             this.tbKategorija = new System.Windows.Forms.TextBox();
             this.tbAvtor = new System.Windows.Forms.TextBox();
             this.tbNaslov = new System.Windows.Forms.TextBox();
+            this.tbId = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -69,17 +71,18 @@
             // btnDodadiZacuvaj
             // 
             this.btnDodadiZacuvaj.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnDodadiZacuvaj.Location = new System.Drawing.Point(104, 122);
+            this.btnDodadiZacuvaj.Location = new System.Drawing.Point(104, 172);
             this.btnDodadiZacuvaj.Name = "btnDodadiZacuvaj";
             this.btnDodadiZacuvaj.Size = new System.Drawing.Size(94, 23);
             this.btnDodadiZacuvaj.TabIndex = 9;
             this.btnDodadiZacuvaj.Text = "Додади";
             this.btnDodadiZacuvaj.UseVisualStyleBackColor = true;
+            this.btnDodadiZacuvaj.Click += new System.EventHandler(this.btnDodadiZacuvaj_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 19);
+            this.label1.Location = new System.Drawing.Point(23, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 10;
@@ -88,7 +91,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 50);
+            this.label2.Location = new System.Drawing.Point(31, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 11;
@@ -97,7 +100,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 84);
+            this.label3.Location = new System.Drawing.Point(6, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 12;
@@ -105,6 +108,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.tbId);
             this.groupBox1.Controls.Add(this.tbKategorija);
             this.groupBox1.Controls.Add(this.btnDodadiZacuvaj);
             this.groupBox1.Controls.Add(this.tbAvtor);
@@ -114,38 +119,54 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(207, 151);
+            this.groupBox1.Size = new System.Drawing.Size(232, 219);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Додади книга";
             // 
             // tbKategorija
             // 
-            this.tbKategorija.Location = new System.Drawing.Point(77, 81);
+            this.tbKategorija.Location = new System.Drawing.Point(77, 131);
             this.tbKategorija.Name = "tbKategorija";
             this.tbKategorija.Size = new System.Drawing.Size(121, 20);
             this.tbKategorija.TabIndex = 15;
             // 
             // tbAvtor
             // 
-            this.tbAvtor.Location = new System.Drawing.Point(77, 50);
+            this.tbAvtor.Location = new System.Drawing.Point(77, 98);
             this.tbAvtor.Name = "tbAvtor";
             this.tbAvtor.Size = new System.Drawing.Size(121, 20);
             this.tbAvtor.TabIndex = 14;
             // 
             // tbNaslov
             // 
-            this.tbNaslov.Location = new System.Drawing.Point(77, 19);
+            this.tbNaslov.Location = new System.Drawing.Point(77, 63);
             this.tbNaslov.Name = "tbNaslov";
             this.tbNaslov.Size = new System.Drawing.Size(121, 20);
             this.tbNaslov.TabIndex = 13;
+            // 
+            // tbId
+            // 
+            this.tbId.Location = new System.Drawing.Point(77, 28);
+            this.tbId.Name = "tbId";
+            this.tbId.Size = new System.Drawing.Size(121, 20);
+            this.tbId.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(36, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Код:";
             // 
             // AddBook
             // 
             this.AcceptButton = this.btnDodadiZacuvaj;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(235, 187);
+            this.ClientSize = new System.Drawing.Size(256, 243);
             this.Controls.Add(this.groupBox1);
             this.Name = "AddBook";
             this.Text = "AddBook";
@@ -172,6 +193,7 @@
         private System.Windows.Forms.TextBox tbKategorija;
         private System.Windows.Forms.TextBox tbAvtor;
         private System.Windows.Forms.TextBox tbNaslov;
-
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbId;
     }
 }
