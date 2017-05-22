@@ -1,0 +1,12 @@
+c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\bin\Debug\vp-proektna-biblioteka.exe.config
+c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\bin\Debug\Books.mdf
+c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\bin\Debug\Books_log.ldf
+c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\bin\Debug\vp-proektna-biblioteka.exe
+c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\bin\Debug\vp-proektna-biblioteka.pdb
+c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.csprojResolveAssemblyReference.cache
+c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.Form1.resources
+c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.Properties.Resources.resources
+c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.csproj.GenerateResource.Cache
+c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.exe
+c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.pdb
+c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.AddBook.resources
