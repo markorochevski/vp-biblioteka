@@ -1,0 +1,1 @@
+Proektna zadaca po predmetot Vizuelno programiranje
