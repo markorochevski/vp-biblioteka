@@ -167,6 +167,7 @@
             this.btnOtstraniKosnicka.TabIndex = 3;
             this.btnOtstraniKosnicka.Text = "Отстрани од кошничка";
             this.btnOtstraniKosnicka.UseVisualStyleBackColor = true;
+            this.btnOtstraniKosnicka.Click += new System.EventHandler(this.btnOtstraniKosnicka_Click);
             // 
             // btnDodadiKniga
             // 
@@ -186,6 +187,7 @@
             this.btnDodadiKosnicka.TabIndex = 7;
             this.btnDodadiKosnicka.Text = "Додади во кошничка";
             this.btnDodadiKosnicka.UseVisualStyleBackColor = true;
+            this.btnDodadiKosnicka.Click += new System.EventHandler(this.btnDodadiKosnicka_Click);
             // 
             // groupBox4
             // 
@@ -219,6 +221,7 @@
             this.rbCelosna.TabStop = true;
             this.rbCelosna.Text = "Целосна листа";
             this.rbCelosna.UseVisualStyleBackColor = true;
+            this.rbCelosna.CheckedChanged += new System.EventHandler(this.rbCelosna_CheckedChanged);
             // 
             // Form1
             // 

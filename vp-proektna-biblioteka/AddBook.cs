@@ -50,9 +50,8 @@ namespace vp_proektna_biblioteka
 
         private void btnDodadiZacuvaj_Click(object sender, EventArgs e)
         {
-
             dodadikniga();
-            f1.Ispolni();
+            //f1.Ispolni();
         }
     }
 }

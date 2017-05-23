@@ -22,3 +22,16 @@ C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proekt
 C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.Form1.resources
 C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.Properties.Resources.resources
 C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.csproj.GenerateResource.Cache
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\vp-proektna-biblioteka.exe.config
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.exe
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.pdb
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\Books.mdf
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\Books_log.ldf
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\vp-proektna-biblioteka.exe
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\vp-proektna-biblioteka.pdb
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.csprojResolveAssemblyReference.cache
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.AddBook.resources
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.Form1.resources
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.Properties.Resources.resources
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.csproj.GenerateResource.Cache
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.InfoForm.resources
