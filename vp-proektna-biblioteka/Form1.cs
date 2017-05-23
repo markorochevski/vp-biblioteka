@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Web;
+using System.IO;
 
 namespace vp_proektna_biblioteka
 {
@@ -31,9 +32,13 @@ namespace vp_proektna_biblioteka
 
         public void Ispolni()
         {
+           // string conn = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
             String query = "SELECT * FROM [Books] ORDER BY Title";
             SqlConnection konekcija = new SqlConnection();
-            konekcija.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\Books.mdf;Integrated Security=True";
+            //string executable = System.Reflection.Assembly.GetExecutingAssembly().Location;
+        string path = (Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())));
+        AppDomain.CurrentDomain.SetData("DataDirectory", path);
+            konekcija.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Books.mdf;Integrated Security=True";
             SqlCommand cmd = new SqlCommand(query, konekcija);
 
             try
@@ -71,7 +76,7 @@ namespace vp_proektna_biblioteka
             lbKnigi.Items.Clear();
             String query = "SELECT Title FROM [Books] WHERE Title='"+tbPrebaraj.Text + "' OR Category='" + tbPrebaraj.Text + "' OR Author='" + tbPrebaraj.Text + "' ORDER BY Title";
             SqlConnection konekcija = new SqlConnection();
-            konekcija.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\Books.mdf;Integrated Security=True";
+            konekcija.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Books.mdf;Integrated Security=True";
             SqlCommand cmd = new SqlCommand(query, konekcija);
 
             try
@@ -101,6 +106,11 @@ namespace vp_proektna_biblioteka
         {
             AddBook add = new AddBook();
             add.Show();
+        }
+
+        private void btnNaracaj_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())));
         }
     }
 }

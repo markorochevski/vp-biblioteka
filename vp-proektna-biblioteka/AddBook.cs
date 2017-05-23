@@ -31,7 +31,7 @@ namespace vp_proektna_biblioteka
         {
             String query = "INSERT INTO [Books] (Id, Title, Author, Category) VALUES('" + tbId.Text + "','" + tbNaslov.Text + "','" + tbAvtor.Text + "','" + tbKategorija.Text + "')";
             SqlConnection konekcija = new SqlConnection();
-            konekcija.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\Books.mdf;Integrated Security=True";
+            konekcija.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Books.mdf;Integrated Security=True";
             SqlCommand cmd = new SqlCommand(query, konekcija);
             try
             {

@@ -148,6 +148,7 @@
             this.btnNaracaj.TabIndex = 1;
             this.btnNaracaj.Text = "НАРАЧАЈ";
             this.btnNaracaj.UseVisualStyleBackColor = true;
+            this.btnNaracaj.Click += new System.EventHandler(this.btnNaracaj_Click);
             // 
             // btnDetali
             // 
