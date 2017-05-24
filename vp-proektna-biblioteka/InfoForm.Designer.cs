@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -35,9 +36,11 @@
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbAddress = new System.Windows.Forms.TextBox();
-            this.tbPhone = new System.Windows.Forms.TextBox();
             this.btnNaracaj = new System.Windows.Forms.Button();
             this.btnOtkazi = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.mtbNumber = new System.Windows.Forms.MaskedTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -82,6 +85,7 @@
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(100, 20);
             this.tbName.TabIndex = 4;
+            this.tbName.Validating += new System.ComponentModel.CancelEventHandler(this.tbName_Validating);
             // 
             // tbEmail
             // 
@@ -96,13 +100,7 @@
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(100, 20);
             this.tbAddress.TabIndex = 6;
-            // 
-            // tbPhone
-            // 
-            this.tbPhone.Location = new System.Drawing.Point(131, 90);
-            this.tbPhone.Name = "tbPhone";
-            this.tbPhone.Size = new System.Drawing.Size(100, 20);
-            this.tbPhone.TabIndex = 7;
+            this.tbAddress.Validating += new System.ComponentModel.CancelEventHandler(this.tbAddress_Validating);
             // 
             // btnNaracaj
             // 
@@ -126,6 +124,19 @@
             this.btnOtkazi.UseVisualStyleBackColor = true;
             this.btnOtkazi.Click += new System.EventHandler(this.btnOtkazi_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // mtbNumber
+            // 
+            this.mtbNumber.Location = new System.Drawing.Point(131, 93);
+            this.mtbNumber.Mask = "999 000 000";
+            this.mtbNumber.Name = "mtbNumber";
+            this.mtbNumber.Size = new System.Drawing.Size(100, 20);
+            this.mtbNumber.TabIndex = 10;
+            this.mtbNumber.Validating += new System.ComponentModel.CancelEventHandler(this.mtbNumber_Validating);
+            // 
             // InfoForm
             // 
             this.AcceptButton = this.btnNaracaj;
@@ -133,9 +144,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnOtkazi;
             this.ClientSize = new System.Drawing.Size(248, 181);
+            this.Controls.Add(this.mtbNumber);
             this.Controls.Add(this.btnOtkazi);
             this.Controls.Add(this.btnNaracaj);
-            this.Controls.Add(this.tbPhone);
             this.Controls.Add(this.tbAddress);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.tbName);
@@ -144,7 +155,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "InfoForm";
-            this.Text = "InfoForm";
+            this.Text = "Контакт информации";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,9 +171,10 @@
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbAddress;
-        private System.Windows.Forms.TextBox tbPhone;
         private System.Windows.Forms.Button btnNaracaj;
         private System.Windows.Forms.Button btnOtkazi;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.MaskedTextBox mtbNumber;
 
     }
 }

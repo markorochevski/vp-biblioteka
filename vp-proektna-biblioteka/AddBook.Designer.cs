@@ -41,11 +41,13 @@
             this.tbKategorija = new System.Windows.Forms.TextBox();
             this.tbAvtor = new System.Windows.Forms.TextBox();
             this.tbNaslov = new System.Windows.Forms.TextBox();
-            this.tbId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tbContent = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // booksDataSet
@@ -71,7 +73,7 @@
             // btnDodadiZacuvaj
             // 
             this.btnDodadiZacuvaj.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnDodadiZacuvaj.Location = new System.Drawing.Point(104, 172);
+            this.btnDodadiZacuvaj.Location = new System.Drawing.Point(108, 159);
             this.btnDodadiZacuvaj.Name = "btnDodadiZacuvaj";
             this.btnDodadiZacuvaj.Size = new System.Drawing.Size(94, 23);
             this.btnDodadiZacuvaj.TabIndex = 9;
@@ -82,7 +84,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 63);
+            this.label1.Location = new System.Drawing.Point(27, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 10;
@@ -91,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 101);
+            this.label2.Location = new System.Drawing.Point(35, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 11;
@@ -100,7 +102,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 131);
+            this.label3.Location = new System.Drawing.Point(10, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 12;
@@ -108,8 +110,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbContent);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.tbId);
             this.groupBox1.Controls.Add(this.tbKategorija);
             this.groupBox1.Controls.Add(this.btnDodadiZacuvaj);
             this.groupBox1.Controls.Add(this.tbAvtor);
@@ -126,40 +128,48 @@
             // 
             // tbKategorija
             // 
-            this.tbKategorija.Location = new System.Drawing.Point(77, 131);
+            this.tbKategorija.Location = new System.Drawing.Point(81, 97);
             this.tbKategorija.Name = "tbKategorija";
             this.tbKategorija.Size = new System.Drawing.Size(121, 20);
             this.tbKategorija.TabIndex = 15;
+            this.tbKategorija.Validating += new System.ComponentModel.CancelEventHandler(this.tbKategorija_Validating);
             // 
             // tbAvtor
             // 
-            this.tbAvtor.Location = new System.Drawing.Point(77, 98);
+            this.tbAvtor.Location = new System.Drawing.Point(81, 64);
             this.tbAvtor.Name = "tbAvtor";
             this.tbAvtor.Size = new System.Drawing.Size(121, 20);
             this.tbAvtor.TabIndex = 14;
+            this.tbAvtor.Validating += new System.ComponentModel.CancelEventHandler(this.tbAvtor_Validating);
             // 
             // tbNaslov
             // 
-            this.tbNaslov.Location = new System.Drawing.Point(77, 63);
+            this.tbNaslov.Location = new System.Drawing.Point(81, 29);
             this.tbNaslov.Name = "tbNaslov";
             this.tbNaslov.Size = new System.Drawing.Size(121, 20);
             this.tbNaslov.TabIndex = 13;
-            // 
-            // tbId
-            // 
-            this.tbId.Location = new System.Drawing.Point(77, 28);
-            this.tbId.Name = "tbId";
-            this.tbId.Size = new System.Drawing.Size(121, 20);
-            this.tbId.TabIndex = 16;
+            this.tbNaslov.Validating += new System.ComponentModel.CancelEventHandler(this.tbNaslov_Validating);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 28);
+            this.label4.Location = new System.Drawing.Point(14, 131);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Код:";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Содржина:";
+            // 
+            // tbContent
+            // 
+            this.tbContent.Location = new System.Drawing.Point(81, 128);
+            this.tbContent.Name = "tbContent";
+            this.tbContent.Size = new System.Drawing.Size(121, 20);
+            this.tbContent.TabIndex = 17;
+            this.tbContent.Validating += new System.ComponentModel.CancelEventHandler(this.tbContent_Validating);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // AddBook
             // 
@@ -175,6 +185,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,7 +204,8 @@
         private System.Windows.Forms.TextBox tbKategorija;
         private System.Windows.Forms.TextBox tbAvtor;
         private System.Windows.Forms.TextBox tbNaslov;
+        private System.Windows.Forms.TextBox tbContent;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbId;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

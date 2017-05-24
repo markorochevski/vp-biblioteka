@@ -36,3 +36,5 @@ C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Deb
 C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.csproj.GenerateResource.Cache
 C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.InfoForm.resources
 C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.ShowDetails.resources
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\DatabaseBooksNew.mdf
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\DatabaseBooksNew_log.ldf

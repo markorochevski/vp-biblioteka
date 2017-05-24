@@ -12,13 +12,15 @@ namespace vp_proektna_biblioteka
         public string TITLE { get; set; }
         public string AUTHOR { get; set; }
         public string CATEGORY { get; set; }
+        public string CONTENT { get; set; }
 
-        public Book(int id, string title, string author, string category)
+        public Book(int id, string title, string author, string category, string content)
         {
             ID = id;
             TITLE = title;
             AUTHOR = author;
             CATEGORY = category;
+            CONTENT = content;
         }
     }
 }

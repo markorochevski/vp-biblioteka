@@ -49,7 +49,8 @@ namespace vp_proektna_biblioteka
                     string title = reader["Title"].ToString();
                     string author = reader["Author"].ToString();
                     string category = reader["Category"].ToString();
-                    books.Add(new Book(id, title, author, category));
+                    string content = reader["Content"].ToString();
+                    books.Add(new Book(id, title, author, category, content));
                     lbKnigi.Items.Add(title);
                 }
                 reader.Close();
@@ -120,7 +121,7 @@ namespace vp_proektna_biblioteka
             DialogResult result = MessageBox.Show("Дали сакаш да ги изнајмиш овие книги?",
                     "Потврди нарачка",
                     MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Exclamation);
+                    MessageBoxIcon.Question);
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
                 InfoForm infoForm = new InfoForm();

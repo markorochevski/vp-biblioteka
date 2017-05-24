@@ -41,10 +41,11 @@ namespace vp_proektna_biblioteka
                     string naslov = reader["Title"].ToString();
                     string avtor = reader["Author"].ToString();
                     string kategorija = reader["Category"].ToString();
-
+                    string content = reader["Content"].ToString();
                     lblTitle.Text = naslov;
                     lblAuthor.Text = avtor;
                     lblCategory.Text = kategorija;
+                    lblContent.Text = content;
                 
                 reader.Close();
             }
