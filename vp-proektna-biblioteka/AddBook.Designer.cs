@@ -73,7 +73,7 @@
             // btnDodadiZacuvaj
             // 
             this.btnDodadiZacuvaj.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnDodadiZacuvaj.Location = new System.Drawing.Point(108, 159);
+            this.btnDodadiZacuvaj.Location = new System.Drawing.Point(147, 290);
             this.btnDodadiZacuvaj.Name = "btnDodadiZacuvaj";
             this.btnDodadiZacuvaj.Size = new System.Drawing.Size(94, 23);
             this.btnDodadiZacuvaj.TabIndex = 9;
@@ -121,16 +121,18 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(232, 219);
+            this.groupBox1.Size = new System.Drawing.Size(262, 332);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Додади книга";
             // 
             // tbContent
             // 
+            this.tbContent.AcceptsReturn = true;
             this.tbContent.Location = new System.Drawing.Point(81, 128);
+            this.tbContent.Multiline = true;
             this.tbContent.Name = "tbContent";
-            this.tbContent.Size = new System.Drawing.Size(121, 20);
+            this.tbContent.Size = new System.Drawing.Size(160, 140);
             this.tbContent.TabIndex = 17;
             this.tbContent.Validating += new System.ComponentModel.CancelEventHandler(this.tbContent_Validating);
             // 
@@ -147,7 +149,7 @@
             // 
             this.tbKategorija.Location = new System.Drawing.Point(81, 97);
             this.tbKategorija.Name = "tbKategorija";
-            this.tbKategorija.Size = new System.Drawing.Size(121, 20);
+            this.tbKategorija.Size = new System.Drawing.Size(160, 20);
             this.tbKategorija.TabIndex = 15;
             this.tbKategorija.Validating += new System.ComponentModel.CancelEventHandler(this.tbKategorija_Validating);
             // 
@@ -155,7 +157,7 @@
             // 
             this.tbAvtor.Location = new System.Drawing.Point(81, 64);
             this.tbAvtor.Name = "tbAvtor";
-            this.tbAvtor.Size = new System.Drawing.Size(121, 20);
+            this.tbAvtor.Size = new System.Drawing.Size(160, 20);
             this.tbAvtor.TabIndex = 14;
             this.tbAvtor.Validating += new System.ComponentModel.CancelEventHandler(this.tbAvtor_Validating);
             // 
@@ -163,7 +165,7 @@
             // 
             this.tbNaslov.Location = new System.Drawing.Point(81, 29);
             this.tbNaslov.Name = "tbNaslov";
-            this.tbNaslov.Size = new System.Drawing.Size(121, 20);
+            this.tbNaslov.Size = new System.Drawing.Size(160, 20);
             this.tbNaslov.TabIndex = 13;
             this.tbNaslov.Validating += new System.ComponentModel.CancelEventHandler(this.tbNaslov_Validating);
             // 
@@ -176,7 +178,7 @@
             this.AcceptButton = this.btnDodadiZacuvaj;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 243);
+            this.ClientSize = new System.Drawing.Size(287, 356);
             this.Controls.Add(this.groupBox1);
             this.Name = "AddBook";
             this.Text = "Додади книга";
