@@ -17,19 +17,16 @@ namespace vp_proektna_biblioteka
     {
         public string title, author, category;
         public int id = -1;
-        public List<Book> books;
 
         public Form1()
         {
             InitializeComponent();
-            books = new List<Book>();
         }
 
         public void Ispolni()
         {
             lbKnigi.Items.Clear();
            // string conn = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-            //String query = "SELECT * FROM [Books] ORDER BY Title";
             String query = "SELECT * FROM [Books]";
             SqlConnection konekcija = new SqlConnection();
             //string executable = System.Reflection.Assembly.GetExecutingAssembly().Location;
@@ -50,7 +47,6 @@ namespace vp_proektna_biblioteka
                     string author = reader["Author"].ToString();
                     string category = reader["Category"].ToString();
                     string content = reader["Content"].ToString();
-                    books.Add(new Book(id, title, author, category, content));
                     lbKnigi.Items.Add(title);
                 }
                 reader.Close();
@@ -75,8 +71,7 @@ namespace vp_proektna_biblioteka
         private void btnPrebaraj_Click(object sender, EventArgs e)
         {
             lbKnigi.Items.Clear();
-            //String query = "SELECT Title FROM [Books] WHERE Title='"+tbPrebaraj.Text + "' OR Category='" + tbPrebaraj.Text + "' OR Author='" + tbPrebaraj.Text + "' ORDER BY Title";
-            String query = "SELECT Title FROM [Books] WHERE Title LIKE '%" + tbPrebaraj.Text + "%' OR Category LIKE '%" + tbPrebaraj.Text + "%' OR Author LIKE '%" + tbPrebaraj.Text + "%' ORDER BY Title";
+            String query = "SELECT Title FROM [Books] WHERE Title LIKE '%" + tbPrebaraj.Text + "%' OR Category LIKE '%" + tbPrebaraj.Text + "%' OR Author LIKE '%" + tbPrebaraj.Text + "%'";
             SqlConnection konekcija = new SqlConnection();
             konekcija.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Books.mdf;Integrated Security=True";
             SqlCommand cmd = new SqlCommand(query, konekcija);
@@ -172,7 +167,7 @@ namespace vp_proektna_biblioteka
             string selectedTitle = lbKnigi.SelectedItem.ToString();
             if (id != -1)
             {
-                ShowDetails details = new ShowDetails(selectedTitle, books);
+                ShowDetails details = new ShowDetails(selectedTitle);
                 details.ShowDialog();
             }
         }

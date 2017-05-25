@@ -14,19 +14,11 @@ namespace vp_proektna_biblioteka
     public partial class ShowDetails : Form
     {
         public int detailsID;
-        Form1 forma;
-        public ShowDetails(string selectedTitle, List<Book> books)
+        public ShowDetails(string selectedTitle)
         {
             InitializeComponent();
-            forma = new Form1();
-            detailsID = 0;
-            for (int i = 0; i < books.Count; i++)
-            {
-                if (books[i].TITLE == selectedTitle)
-                    detailsID = books[i].ID;
-            }
 
-            String query = "SELECT * FROM [Books] WHERE Id='" + detailsID + "'";
+            String query = "SELECT * FROM [Books] WHERE Title='" + selectedTitle + "'";
             SqlConnection konekcija = new SqlConnection();
             konekcija.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Books.mdf;Integrated Security=True";
             SqlCommand cmd = new SqlCommand(query, konekcija);
@@ -37,15 +29,15 @@ namespace vp_proektna_biblioteka
                 SqlDataReader reader;
                 reader = cmd.ExecuteReader();
 
-                    reader.Read();
-                    string naslov = reader["Title"].ToString();
-                    string avtor = reader["Author"].ToString();
-                    string kategorija = reader["Category"].ToString();
-                    string content = reader["Content"].ToString();
-                    lblTitle.Text = naslov;
-                    lblAuthor.Text = avtor;
-                    lblCategory.Text = kategorija;
-                    lblContent.Text = content;
+                reader.Read();
+                string naslov = reader["Title"].ToString();
+                string avtor = reader["Author"].ToString();
+                string kategorija = reader["Category"].ToString();
+                string content = reader["Content"].ToString();
+                lblTitle.Text = naslov;
+                lblAuthor.Text = avtor;
+                lblCategory.Text = kategorija;
+                lblContent.Text = content;
                 
                 reader.Close();
             }

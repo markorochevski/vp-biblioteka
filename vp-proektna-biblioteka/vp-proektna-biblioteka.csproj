@@ -65,9 +65,9 @@
     <Compile Include="AddBook.Designer.cs">
       <DependentUpon>AddBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="Book.cs" />
     <Compile Include="BooksDataSet.cs">
       <DependentUpon>BooksDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BooksDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
