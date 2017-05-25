@@ -44,11 +44,40 @@
 
 -	Податоците за книгите се чуваат во локална база `Books.mdf`. Во оваа база има табела со име `Books`. Секоја книга од табелата има свое `id` (self  increment), наслов, автор, категорија и куса содржина. 
 -	Листата со книги се исполнува во настанот `Form1_Load` преку функцијата `Ispolni()`.
--	Пребарувањето се извршува во `btnPrebaraj_Click` со извршување на стрингот:  
+-	Пребарувањето се извршува во `btnPrebaraj_Click` со функцијата:  
 ```c#
-String query = "SELECT Title FROM [Books] WHERE Title LIKE '%" + tbPrebaraj.Text + "%' OR Category LIKE '%" + tbPrebaraj.Text + "%' OR Author LIKE '%" + tbPrebaraj.Text + "%' ORDER BY Title";
+private void btnPrebaraj_Click(object sender, EventArgs e)
+        {
+            lbKnigi.Items.Clear();
+            String query = "SELECT Title FROM [Books] WHERE Title LIKE '%" + tbPrebaraj.Text + "%' OR Category LIKE '%" + tbPrebaraj.Text + "%' OR Author LIKE '%" + tbPrebaraj.Text + "%'";
+            SqlConnection konekcija = new SqlConnection();
+            konekcija.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Books.mdf;Integrated Security=True";
+            SqlCommand cmd = new SqlCommand(query, konekcija);
+
+            try
+            {
+                konekcija.Open();
+                SqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string item = reader["Title"].ToString();
+                    lbKnigi.Items.Add(item);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                konekcija.Close();
+            }
+            rbPrebaruvanje.Checked = true;           
+        }
 ```
-каде што `tbPrebaraj.Text` е вредноста на полето за пребарување.
+- Функцијата најпрво ја испразнува листата со книги, го греира соодветниот `SELECT` query string за пребарувањето и го постатува конекцискиот стринг. Потоа со користење на `SqlDataReader` се читаат сите записи во базата кои одговараат на `SELECT` стрингот и истите се запишуваат во листата.
 - Податоците од формата за додавање на книги во библиотеката се додаваат со помош на `INSERT` наредба за додавање на книги во табелата `Books`.
 
 ```c#
