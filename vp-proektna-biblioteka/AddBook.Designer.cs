@@ -38,11 +38,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbContent = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.tbKategorija = new System.Windows.Forms.TextBox();
             this.tbAvtor = new System.Windows.Forms.TextBox();
             this.tbNaslov = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbContent = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
@@ -126,6 +126,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Додади книга";
             // 
+            // tbContent
+            // 
+            this.tbContent.Location = new System.Drawing.Point(81, 128);
+            this.tbContent.Name = "tbContent";
+            this.tbContent.Size = new System.Drawing.Size(121, 20);
+            this.tbContent.TabIndex = 17;
+            this.tbContent.Validating += new System.ComponentModel.CancelEventHandler(this.tbContent_Validating);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 131);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Содржина:";
+            // 
             // tbKategorija
             // 
             this.tbKategorija.Location = new System.Drawing.Point(81, 97);
@@ -150,23 +167,6 @@
             this.tbNaslov.TabIndex = 13;
             this.tbNaslov.Validating += new System.ComponentModel.CancelEventHandler(this.tbNaslov_Validating);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 131);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Содржина:";
-            // 
-            // tbContent
-            // 
-            this.tbContent.Location = new System.Drawing.Point(81, 128);
-            this.tbContent.Name = "tbContent";
-            this.tbContent.Size = new System.Drawing.Size(121, 20);
-            this.tbContent.TabIndex = 17;
-            this.tbContent.Validating += new System.ComponentModel.CancelEventHandler(this.tbContent_Validating);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -179,7 +179,7 @@
             this.ClientSize = new System.Drawing.Size(256, 243);
             this.Controls.Add(this.groupBox1);
             this.Name = "AddBook";
-            this.Text = "AddBook";
+            this.Text = "Додади книга";
             this.Load += new System.EventHandler(this.AddBook_Load);
             ((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
