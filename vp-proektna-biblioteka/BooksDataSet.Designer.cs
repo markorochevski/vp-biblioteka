@@ -389,10 +389,10 @@ namespace vp_proektna_biblioteka {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BooksRow AddBooksRow(int Id, string Title, string Author, string Category) {
+            public BooksRow AddBooksRow(string Title, string Author, string Category) {
                 BooksRow rowBooksRow = ((BooksRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Title,
                         Author,
                         Category};
@@ -444,6 +444,8 @@ namespace vp_proektna_biblioteka {
                 base.Columns.Add(this.columnCategory);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = 15;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnTitle.MaxLength = 50;

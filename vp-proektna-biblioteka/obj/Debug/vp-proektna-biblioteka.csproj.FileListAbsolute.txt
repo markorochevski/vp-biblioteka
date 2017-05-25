@@ -10,3 +10,35 @@ c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\
 c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.exe
 c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.pdb
 c:\users\rochevski\documents\visual studio 2013\Projects\vp-proektna-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.AddBook.resources
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\vp-proektna-biblioteka.exe.config
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.exe
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.pdb
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\Books.mdf
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\Books_log.ldf
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\vp-proektna-biblioteka.exe
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\vp-proektna-biblioteka.pdb
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.csprojResolveAssemblyReference.cache
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.AddBook.resources
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.Form1.resources
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.Properties.Resources.resources
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.csproj.GenerateResource.Cache
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\vp-proektna-biblioteka.exe.config
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.exe
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.pdb
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\Books.mdf
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\Books_log.ldf
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\vp-proektna-biblioteka.exe
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\vp-proektna-biblioteka.pdb
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.csprojResolveAssemblyReference.cache
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.AddBook.resources
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.Form1.resources
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.Properties.Resources.resources
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp-proektna-biblioteka.csproj.GenerateResource.Cache
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.InfoForm.resources
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.ShowDetails.resources
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\DatabaseBooksNew.mdf
+C:\Users\Rochevski\Desktop\proektna\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\DatabaseBooksNew_log.ldf
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\DatabaseBooksNew.mdf
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\bin\Debug\DatabaseBooksNew_log.ldf
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.InfoForm.resources
+C:\Users\Gala\Documents\vp-biblioteka\vp-proektna-biblioteka\obj\Debug\vp_proektna_biblioteka.ShowDetails.resources

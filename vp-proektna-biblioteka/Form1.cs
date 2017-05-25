@@ -9,31 +9,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Web;
+using System.IO;
 
 namespace vp_proektna_biblioteka
 {
     public partial class Form1 : Form
     {
+        public string title, author, category;
+        public int id = -1;
+
         public Form1()
         {
-            InitializeComponent();            
-        }
-
-        public void fill()
-        {
-            DataRow anyRow = booksDataSet.Books.NewRow();
-            anyRow[0] = 15;
-            anyRow[1] = "Naslov";
-            anyRow[2] = "Avtor";
-            anyRow[3] = "zanr";
-            booksDataSet.Books.Rows.Add(anyRow);
+            InitializeComponent();
         }
 
         public void Ispolni()
         {
-            String query = "SELECT ID, Title, Author, Category FROM dbo.Books";
+            lbKnigi.Items.Clear();
+           // string conn = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+            String query = "SELECT * FROM [Books]";
             SqlConnection konekcija = new SqlConnection();
-            konekcija.ConnectionString = "Data Source=(LocalDB)\v11.0;AttachDbFilename=\"C:\\Users\\Rochevski\\documents\\visual studio 2013\\Projects\\vp-proektna-biblioteka\\vp-proektna-biblioteka\\Books.mdf\";Integrated Security=True";
+            //string executable = System.Reflection.Assembly.GetExecutingAssembly().Location;
+        string path = (Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())));
+        AppDomain.CurrentDomain.SetData("DataDirectory", path);
+            konekcija.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Books.mdf;Integrated Security=True";
             SqlCommand cmd = new SqlCommand(query, konekcija);
 
             try
@@ -43,11 +42,12 @@ namespace vp_proektna_biblioteka
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    //ListItem item = new ListItem();
-                   // item.Text = reader["au_fname"].ToString() + " " + reader["au_lname"].ToString();
-                   // item.Value = reader["au_id"].ToString();
-                    string item = reader["Title"].ToString();
-                    lbKosnicka.Items.Add(item);
+                    int id = (int)reader["Id"];
+                    string title = reader["Title"].ToString();
+                    string author = reader["Author"].ToString();
+                    string category = reader["Category"].ToString();
+                    string content = reader["Content"].ToString();
+                    lbKnigi.Items.Add(title);
                 }
                 reader.Close();
             }
@@ -61,19 +61,142 @@ namespace vp_proektna_biblioteka
             }
         }
 
-        private void booksBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.booksBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.booksDataSet);
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'booksDataSet.Books' table. You can move, or remove it, as needed.
-            this.booksTableAdapter.Fill(this.booksDataSet.Books);
+          
+            Ispolni();
         }
 
+        private void btnPrebaraj_Click(object sender, EventArgs e)
+        {
+            lbKnigi.Items.Clear();
+            String query = "SELECT Title FROM [Books] WHERE Title LIKE '%" + tbPrebaraj.Text + "%' OR Category LIKE '%" + tbPrebaraj.Text + "%' OR Author LIKE '%" + tbPrebaraj.Text + "%'";
+            SqlConnection konekcija = new SqlConnection();
+            konekcija.ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Books.mdf;Integrated Security=True";
+            SqlCommand cmd = new SqlCommand(query, konekcija);
 
+            try
+            {
+                konekcija.Open();
+                SqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string item = reader["Title"].ToString();
+                    lbKnigi.Items.Add(item);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                konekcija.Close();
+            }
+
+            rbPrebaruvanje.Checked = true;
+            
+        }
+
+        private void btnDodadiKniga_Click(object sender, EventArgs e)
+        {
+            AddBook add = new AddBook();
+            if (add.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Ispolni();
+            }
+        }
+
+        private void btnNaracaj_Click(object sender, EventArgs e)
+        {
+           // MessageBox.Show(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())));
+            DialogResult result = MessageBox.Show("Дали сакаш да ги изнајмиш овие книги?",
+                    "Потврди нарачка",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                InfoForm infoForm = new InfoForm();
+                if (infoForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    lbKosnicka.Items.Clear();
+                }
+            }
+        }
+
+        private void rbCelosna_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbCelosna.Checked)
+            {
+                Ispolni();
+            }
+            else
+            {
+                btnPrebaraj_Click(sender, e);
+            }
+        }
+
+        private void btnDodadiKosnicka_Click(object sender, EventArgs e)
+        {
+            int index = lbKnigi.SelectedIndex;
+            if (index != -1)
+            {
+                string selectedBook = lbKnigi.SelectedItem.ToString();
+                lbKosnicka.Items.Add(selectedBook);
+                lbKnigi.SelectedIndex = -1;
+            }
+            
+        }
+
+        private void btnOtstraniKosnicka_Click(object sender, EventArgs e)
+        {
+            int index = lbKosnicka.SelectedIndex;
+            if (index != -1)
+            {
+                lbKosnicka.Items.RemoveAt(index);
+                lbKosnicka.SelectedIndex = -1;
+            }
+        }
+
+        private void btnDetali_Click(object sender, EventArgs e)
+        {
+            id = lbKnigi.SelectedIndex;
+            string selectedTitle = lbKnigi.SelectedItem.ToString();
+            if (id != -1)
+            {
+                ShowDetails details = new ShowDetails(selectedTitle);
+                details.ShowDialog();
+            }
+        }
+
+        private void lbKnigi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = lbKnigi.SelectedIndex;
+            if (index != -1){
+                btnDetali.Enabled = true;
+                btnDodadiKosnicka.Enabled = true;
+            }
+            else
+            {
+                btnDetali.Enabled = false;
+                btnDodadiKosnicka.Enabled = false;
+            }
+        }
+
+        private void lbKosnicka_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = lbKosnicka.SelectedIndex;
+            if (index != -1)
+            {
+                btnOtstraniKosnicka.Enabled = true;
+            }
+            else
+            {
+                btnOtstraniKosnicka.Enabled = false;
+            }
+        }
     }
 }

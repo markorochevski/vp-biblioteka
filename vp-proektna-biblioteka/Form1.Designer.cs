@@ -30,15 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lbKnigi = new System.Windows.Forms.ListBox();
-            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.booksDataSet = new vp_proektna_biblioteka.BooksDataSet();
-            this.booksTableAdapter = new vp_proektna_biblioteka.BooksDataSetTableAdapters.BooksTableAdapter();
-            this.tableAdapterManager = new vp_proektna_biblioteka.BooksDataSetTableAdapters.TableAdapterManager();
             this.tbPrebaraj = new System.Windows.Forms.TextBox();
             this.btnPrebaraj = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbKosnicka = new System.Windows.Forms.ListBox();
             this.btnNaracaj = new System.Windows.Forms.Button();
             this.btnDetali = new System.Windows.Forms.Button();
             this.btnOtstraniKosnicka = new System.Windows.Forms.Button();
@@ -47,44 +44,26 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.rbPrebaruvanje = new System.Windows.Forms.RadioButton();
             this.rbCelosna = new System.Windows.Forms.RadioButton();
-            this.lbKosnicka = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).BeginInit();
+            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.booksDataSet = new vp_proektna_biblioteka.BooksDataSet();
+            this.booksTableAdapter = new vp_proektna_biblioteka.BooksDataSetTableAdapters.BooksTableAdapter();
+            this.tableAdapterManager = new vp_proektna_biblioteka.BooksDataSetTableAdapters.TableAdapterManager();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lbKnigi
             // 
-            this.lbKnigi.DataSource = this.booksBindingSource;
-            this.lbKnigi.DisplayMember = "Title";
             this.lbKnigi.FormattingEnabled = true;
             this.lbKnigi.Location = new System.Drawing.Point(6, 19);
             this.lbKnigi.Name = "lbKnigi";
             this.lbKnigi.Size = new System.Drawing.Size(236, 173);
             this.lbKnigi.TabIndex = 0;
-            // 
-            // booksBindingSource
-            // 
-            this.booksBindingSource.DataMember = "Books";
-            this.booksBindingSource.DataSource = this.booksDataSet;
-            // 
-            // booksDataSet
-            // 
-            this.booksDataSet.DataSetName = "BooksDataSet";
-            this.booksDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // booksTableAdapter
-            // 
-            this.booksTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BooksTableAdapter = this.booksTableAdapter;
-            this.tableAdapterManager.UpdateOrder = vp_proektna_biblioteka.BooksDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.lbKnigi.SelectedIndexChanged += new System.EventHandler(this.lbKnigi_SelectedIndexChanged);
             // 
             // tbPrebaraj
             // 
@@ -101,6 +80,7 @@
             this.btnPrebaraj.TabIndex = 2;
             this.btnPrebaraj.Text = "Пребарај";
             this.btnPrebaraj.UseVisualStyleBackColor = true;
+            this.btnPrebaraj.Click += new System.EventHandler(this.btnPrebaraj_Click);
             // 
             // groupBox1
             // 
@@ -128,37 +108,51 @@
             this.groupBox3.Controls.Add(this.lbKosnicka);
             this.groupBox3.Location = new System.Drawing.Point(266, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(259, 258);
+            this.groupBox3.Size = new System.Drawing.Size(158, 229);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Кошничка";
             // 
+            // lbKosnicka
+            // 
+            this.lbKosnicka.FormattingEnabled = true;
+            this.lbKosnicka.Location = new System.Drawing.Point(3, 16);
+            this.lbKosnicka.Name = "lbKosnicka";
+            this.lbKosnicka.Size = new System.Drawing.Size(146, 199);
+            this.lbKosnicka.TabIndex = 0;
+            this.lbKosnicka.SelectedIndexChanged += new System.EventHandler(this.lbKosnicka_SelectedIndexChanged);
+            // 
             // btnNaracaj
             // 
-            this.btnNaracaj.Location = new System.Drawing.Point(266, 317);
+            this.btnNaracaj.Location = new System.Drawing.Point(260, 318);
             this.btnNaracaj.Name = "btnNaracaj";
-            this.btnNaracaj.Size = new System.Drawing.Size(259, 30);
+            this.btnNaracaj.Size = new System.Drawing.Size(164, 37);
             this.btnNaracaj.TabIndex = 1;
             this.btnNaracaj.Text = "НАРАЧАЈ";
             this.btnNaracaj.UseVisualStyleBackColor = true;
+            this.btnNaracaj.Click += new System.EventHandler(this.btnNaracaj_Click);
             // 
             // btnDetali
             // 
+            this.btnDetali.Enabled = false;
             this.btnDetali.Location = new System.Drawing.Point(147, 276);
             this.btnDetali.Name = "btnDetali";
             this.btnDetali.Size = new System.Drawing.Size(107, 23);
             this.btnDetali.TabIndex = 2;
             this.btnDetali.Text = "Прикажи детали";
             this.btnDetali.UseVisualStyleBackColor = true;
+            this.btnDetali.Click += new System.EventHandler(this.btnDetali_Click);
             // 
             // btnOtstraniKosnicka
             // 
-            this.btnOtstraniKosnicka.Location = new System.Drawing.Point(393, 276);
+            this.btnOtstraniKosnicka.Enabled = false;
+            this.btnOtstraniKosnicka.Location = new System.Drawing.Point(266, 276);
             this.btnOtstraniKosnicka.Name = "btnOtstraniKosnicka";
-            this.btnOtstraniKosnicka.Size = new System.Drawing.Size(132, 23);
+            this.btnOtstraniKosnicka.Size = new System.Drawing.Size(158, 23);
             this.btnOtstraniKosnicka.TabIndex = 3;
             this.btnOtstraniKosnicka.Text = "Отстрани од кошничка";
             this.btnOtstraniKosnicka.UseVisualStyleBackColor = true;
+            this.btnOtstraniKosnicka.Click += new System.EventHandler(this.btnOtstraniKosnicka_Click);
             // 
             // btnDodadiKniga
             // 
@@ -168,15 +162,18 @@
             this.btnDodadiKniga.TabIndex = 6;
             this.btnDodadiKniga.Text = "Додади книга";
             this.btnDodadiKniga.UseVisualStyleBackColor = true;
+            this.btnDodadiKniga.Click += new System.EventHandler(this.btnDodadiKniga_Click);
             // 
             // btnDodadiKosnicka
             // 
-            this.btnDodadiKosnicka.Location = new System.Drawing.Point(266, 276);
+            this.btnDodadiKosnicka.Enabled = false;
+            this.btnDodadiKosnicka.Location = new System.Drawing.Point(266, 247);
             this.btnDodadiKosnicka.Name = "btnDodadiKosnicka";
-            this.btnDodadiKosnicka.Size = new System.Drawing.Size(121, 23);
+            this.btnDodadiKosnicka.Size = new System.Drawing.Size(158, 23);
             this.btnDodadiKosnicka.TabIndex = 7;
             this.btnDodadiKosnicka.Text = "Додади во кошничка";
             this.btnDodadiKosnicka.UseVisualStyleBackColor = true;
+            this.btnDodadiKosnicka.Click += new System.EventHandler(this.btnDodadiKosnicka_Click);
             // 
             // groupBox4
             // 
@@ -210,20 +207,33 @@
             this.rbCelosna.TabStop = true;
             this.rbCelosna.Text = "Целосна листа";
             this.rbCelosna.UseVisualStyleBackColor = true;
+            this.rbCelosna.CheckedChanged += new System.EventHandler(this.rbCelosna_CheckedChanged);
             // 
-            // lbKosnicka
+            // booksBindingSource
             // 
-            this.lbKosnicka.FormattingEnabled = true;
-            this.lbKosnicka.Location = new System.Drawing.Point(3, 16);
-            this.lbKosnicka.Name = "lbKosnicka";
-            this.lbKosnicka.Size = new System.Drawing.Size(120, 95);
-            this.lbKosnicka.TabIndex = 0;
+            this.booksBindingSource.DataMember = "Books";
+            this.booksBindingSource.DataSource = this.booksDataSet;
+            // 
+            // booksDataSet
+            // 
+            this.booksDataSet.DataSetName = "BooksDataSet";
+            this.booksDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // booksTableAdapter
+            // 
+            this.booksTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BooksTableAdapter = this.booksTableAdapter;
+            this.tableAdapterManager.UpdateOrder = vp_proektna_biblioteka.BooksDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 367);
+            this.ClientSize = new System.Drawing.Size(434, 366);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnDodadiKosnicka);
             this.Controls.Add(this.btnDodadiKniga);
@@ -234,16 +244,16 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Библиотека";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
