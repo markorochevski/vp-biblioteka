@@ -2,7 +2,7 @@
 
 ## Windows forms library
 
-#### Windows forms project by: Gala Miljkovikj, Marko Rochevski.
+#### Windows forms проект од: Марко Рочевски и Гала Миљковиќ.
 
 #### Целта на оваа апликација е да го олесни процесот на пребарување и изнајмување книги од библиотека. 
 
